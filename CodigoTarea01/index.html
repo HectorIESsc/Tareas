@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DWCC_T01_Ejercicio_01</title>
+</head>
+<body>
+        <h1>Tabla de multiplicar del 5</h1>
+        <script>
+            let numero = 5;
+            let hastaValor = 10;
+
+            // Búcle For
+            for (let i = 1; i <=hastaValor; i++) {
+                document.write(numero+"*"+i+"="+(numero*i)+"<br>");
+                
+            }
+        </script>
+<p>
+        <h1>Tabla de sumar del 7</h1>
+        <script>
+            let numeroSuma= 7;
+            let hastaValorSuma= 10;
+            let j= 1;
+
+            // Búcle do while
+            do {
+                document.write(numeroSuma+"+"+j+"="+(numeroSuma+j)+"<br>");
+                j++;
+
+            } while (j<=hastaValorSuma);
+
+        </script>
+
+<p>
+        <h1>10 primeros números sucesión Fibonacci</h1>
+        <script>
+
+            let vecesSucesion=10;
+            let primerFibo=0;
+            let segundoFibo=1;
+            let fiboResultante;
+            let i=1;
+            
+            // Búcle while
+            while (i<=vecesSucesion) {
+                
+                fiboResultante= parseInt(primerFibo+segundoFibo)
+
+                if (i!==vecesSucesion) {
+                    document.write(fiboResultante+",");
+                } else {
+                    document.write(fiboResultante+".");
+                }      
+
+                primerFibo=segundoFibo;
+                segundoFibo=fiboResultante;
+                
+                i++;
+
+            }
+        </script>
+    
+</body>
+</html>

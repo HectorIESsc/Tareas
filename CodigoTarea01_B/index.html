@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué eres según tu edad?</title>
+
+    <script>
+        const analisisEdad = () => {
+          this.event.preventDefault();
+
+          let edad =prompt("Introduce tu edad");
+
+           if (edad<=0 || edad >100) {
+                alert('La edad introducida debe ser superior a 0 y menor o igual a 100');     
+                edad= '';     
+            } else {
+
+                let esEntero = true;
+                esEntero= Number.isInteger(parseInt(edad));
+
+                if (esEntero) {
+                                        
+                    let resultado = document.getElementById('resultado');
+                    let texto=(`<h2>Su edad es ${edad}</h2>`);
+                    let apelativo = '';
+
+                    if (edad>0 && edad<=12) {
+                        apelativo="niño";
+                    } else if (edad>12 && edad<=18) {
+                        apelativo="adolescente";
+                    } else if (edad>18 && edad<=30) {
+                        apelativo="joven";
+                    } else if (edad>30 && edad<=64) {
+                        apelativo="adulto";
+                    } else {
+                        apelativo="jubilado";
+                    }
+                         
+                    texto+= `<p>Es usted un ${apelativo}</p>`;
+                    
+                    resultado.innerHTML=texto;
+
+                } else {
+                    alert('Debe introducir un número');     
+                    edad='';
+                }
+                
+                     }
+
+        }
+    </script>
+    </head>
+<body>
+        <h1>¿Qué eres según tu edad?</h1>
+        <form onsubmit="analisisEdad()">
+            <!-- <label for="numero">Introduce el número:</label>
+            <input id="numero" type="number" required/> -->
+            <input type="submit" value="Presiona aquí" />
+        </form>
+        <div id="resultado">
+        </div>
+
+</body>
+</html>
